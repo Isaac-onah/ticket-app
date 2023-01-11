@@ -74,7 +74,33 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          TicketView()
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.only(right: 20),
+            child: Row(
+              children: [
+                TicketView(),
+                TicketView(),
+                TicketView(),
+                TicketView(),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Hotels", style: Styles.headLineStyle2,),
+                InkWell(
+                  onTap: (){
+                    print("object");
+                  },
+                  child: Text("View all", style: Styles.textStyle.copyWith(color: Styles.primaryColor),),
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
