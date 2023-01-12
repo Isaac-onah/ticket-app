@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:ticket/screens/widget/icon_text_widget.dart';
 import 'package:ticket/util/app_layout.dart';
 import 'package:ticket/util/style.dart';
 
@@ -50,20 +51,79 @@ class SearchScreen extends StatelessWidget {
             ),
           ),
           Gap(AppLayout.getHeight(20)),
+          AppIconText(icon: Icons.flight_takeoff_rounded, text: "Departure",),
+          Gap(AppLayout.getHeight(15)),
+          AppIconText(icon: Icons.flight_land_rounded, text: "Arrival",),
+          Gap(AppLayout.getHeight(25)),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(12), vertical: AppLayout.getHeight(12)),
+            padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(12), vertical: AppLayout.getHeight(20)),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(AppLayout.getHeight(10)),
-                color: Colors.white
+                color: Color(0xD91130CE)
             ),
-            child: Row(
-              children: [
-                Icon(Icons.flight_takeoff_rounded),
-                Gap(AppLayout.getWidth(10)),
-                Text('Departure'),
-              ],
-            ),
+            child: Center(child: Text("Find Tickets", style: Styles.textStyle.copyWith(color: Colors.white),)),
           ),
+          Gap(AppLayout.getHeight(25)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Upcoming Flights", style: Styles.headLineStyle2,),
+              InkWell(
+                onTap: (){
+                  print("object");
+                },
+                child: Text("View all", style: Styles.textStyle.copyWith(color: Styles.primaryColor),),
+              )
+            ],
+          ),
+          Gap(AppLayout.getHeight(25)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                height: AppLayout.getHeight(425),
+                  width: size.width*0.42,
+                  padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(12), vertical: AppLayout.getHeight(12)),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(AppLayout.getHeight(20)),
+                      color: Colors.white
+                  ),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 150,
+                        decoration: BoxDecoration(
+                            color: Styles.primaryColor,
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(fit: BoxFit.cover, image: AssetImage("images/sit.jpg"))
+                        ),
+                        padding: EdgeInsets.all(16),
+                      ),
+                      Text("Upcoming Flights", style: Styles.headLineStyle2,),
+                    ],
+                  )),
+              Column(
+                children: [
+                  Stack(
+                    children: [
+                      Container(
+                        width: size.width*0.44,
+                        height: AppLayout.getHeight(200),
+                        padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(12), vertical: AppLayout.getHeight(20)),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(AppLayout.getHeight(10)),
+                            color: Color(0xFF3AB8B8),
+                        ),
+                      )
+                    ],
+                  ),
+                  Container(
+
+                  )
+                ],
+              )
+            ],
+          )
         ],
       ),
     );
