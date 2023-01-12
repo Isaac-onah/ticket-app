@@ -1,8 +1,11 @@
+import 'dart:math';
+
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticket/screens/ticket_view.dart';
 import 'package:ticket/screens/widget/hotel_card.dart';
+import 'package:ticket/util/app_info_list.dart';
 import 'package:ticket/util/style.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -79,12 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.only(right: 20),
             child: Row(
-              children: [
-                TicketView(),
-                TicketView(),
-                TicketView(),
-                TicketView(),
-              ],
+              children: ticketList.map((singleTicket) => TicketView(ticket: singleTicket)).toList()
             ),
           ),
           Container(
@@ -106,12 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.only(left: 20),
             child: Row(
-              children: [
-                HotelView(),
-                HotelView(),
-                HotelView(),
-                HotelView(),
-              ],
+              children: hotelList.map((singleHotel) => HotelView(hotel: singleHotel)).toList(),
             ),
           ),
         ],
