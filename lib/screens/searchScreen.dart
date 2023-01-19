@@ -79,9 +79,10 @@ class SearchScreen extends StatelessWidget {
           Gap(AppLayout.getHeight(25)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: AppLayout.getHeight(425),
+                height: AppLayout.getHeight(400),
                   width: size.width*0.42,
                   padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(12), vertical: AppLayout.getHeight(12)),
                   decoration: BoxDecoration(
@@ -114,11 +115,45 @@ class SearchScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(AppLayout.getHeight(10)),
                             color: Color(0xFF3AB8B8),
                         ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Discount\nfor survey", style: Styles.headLineStyle2.copyWith(color: Colors.white),),
+                            Gap(AppLayout.getHeight(10)),
+                            Text("Take the survey about our services and get discount", style: Styles.headLineStyle3.copyWith(color: Colors.white),),
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                        right: -45,
+                        top: -40,
+                        child: Container(
+                          padding: EdgeInsets.all(AppLayout.getHeight(30)),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                              border: Border.all(width: 18, color: Color(0xFF189999)),
+                            color: Colors.transparent
+                          ),
+                        ),
                       )
                     ],
                   ),
+                  Gap(AppLayout.getHeight(15)),
                   Container(
-
+                    width: size.width*0.44,
+                    height: AppLayout.getHeight(200),
+                    padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(12), vertical: AppLayout.getHeight(20)),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(AppLayout.getHeight(10)),
+                      color: Color(0xFF3AB8B8),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Discount\nfor survey", style: Styles.textStyle.copyWith(color: Colors.white),),
+                        Text("Take the survey about our services and get discount", style: Styles.textStyle.copyWith(color: Colors.white),),
+                      ],
+                    ),
                   )
                 ],
               )
