@@ -177,9 +177,9 @@ class TicketDetailsView extends StatelessWidget {
     final size = AppLayout.getSize(context);
     return SizedBox(
       width: size.width,
-      height: AppLayout.getHeight(600),
+      height: AppLayout.getHeight(520),
       child: Container(
-        padding: EdgeInsets.all(AppLayout.getHeight(16)),
+        padding: EdgeInsets.all(AppLayout.getHeight(10)),
         child: Column(
           children: [
             Container(

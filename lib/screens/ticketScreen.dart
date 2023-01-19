@@ -19,7 +19,7 @@ class TicketScreen extends StatelessWidget {
         children: [
           Gap(AppLayout.getHeight(40)),
           Text('What are \nyou looking for?', style: Styles.headLineStyle.copyWith(fontSize: AppLayout.getWidth(35)),),
-          Gap(AppLayout.getHeight(25)),
+          Gap(AppLayout.getHeight(20)),
           FittedBox(
             child: Container(
               padding: const EdgeInsets.all(3.5),
@@ -52,7 +52,7 @@ class TicketScreen extends StatelessWidget {
               ),
             ),
           ),
-          Gap(AppLayout.getHeight(20)),
+          Gap(AppLayout.getHeight(15)),
           TicketDetailsView(),
           TicketViewed()
         ],
