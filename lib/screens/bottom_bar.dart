@@ -4,6 +4,8 @@ import 'package:ticket/screens/home_screen.dart';
 import 'package:ticket/screens/searchScreen.dart';
 import 'package:ticket/screens/ticketScreen.dart';
 
+import 'profile.dart';
+
 class BottomBar extends StatefulWidget {
   const BottomBar({Key? key}) : super(key: key);
 
@@ -19,7 +21,7 @@ class _BottomBarState extends State<BottomBar> {
     const HomeScreen(),
     const SearchScreen(),
     const TicketScreen(),
-    const Text('Profile'),
+    const ProfileScreen(),
   ];
 
   void _onItemTapped(int index){
